@@ -2,15 +2,15 @@ PauseScreen = {}
 local hide
 
 function PauseScreen:new()
+  	local fadeWorking = false
 	local screen = display.newGroup()
 	local back = display.newImage( myImageSheet , sheetInfo:getFrameIndex("shadow_back"))
 	local function onBackTouch(event)
-		if(event.phase == "ended") then
+	  	if(event.phase == "ended" and fadeWorking == false) then
 			hide()
-			return true
-		end
+		 end
+		  return true
 	end
-	back:addEventListener("touch", onBackTouch)
 	screen:insert(back)
 
 	local textPic = display.newImage( myImageSheet , sheetInfo:getFrameIndex("button_continue"))
@@ -21,21 +21,24 @@ function PauseScreen:new()
 	screen.alpha = 0
 
 	local function PauseShowComplete()
-	   back:addEventListener("touch", back)
+	   back:addEventListener("touch", onBackTouch)
+	  fadeWorking = false
 	end
 
 	local function PauseHideComplete()
+	  	back:removeEventListener("touch", onBackTouch)
+		  fadeWorking = false
 	    togglePause()
 	end
 
 	function screen:show()
-
+	  	fadeWorking = true
 	  	transition.to(screen, {time=500, alpha=1, transition=easing.linear, onComplete=PauseShowComplete})
 	end
 
 	-- hide will calls from PauseScreen
 	function hide()
-	  	back:removeEventListener("touch", back)
+	  	fadeWorking = true
 		transition.to(screen, {time=500, alpha=0, transition=easing.linear, onComplete=PauseHideComplete})
 	end
 

@@ -6,11 +6,11 @@ require "src.objects.Level"
 require "src.GUI.HUD"
 require "src.GUI.PauseScreen"
 
+display.setStatusBar(display.HiddenStatusBar)
 
 local function initGlobals()
     _G.stage = display.getCurrentStage()
     _G.mainLoop = MainLoop:new()
-	mainLoop:start()
 	_G.mainGroup = display.newGroup()
 	mainGroup.name = "mainGroup"
 	mainGroup.classType = "mainGroup"
@@ -24,10 +24,10 @@ end
 
 local function onStartGameTouched(event)
 	mainMenu:hide()
+ 	return true
 end
 
-
-function onTitleScreenHideComplete()
+local function onTitleScreenHideComplete()
 	mainMenu:removeEventListener("screenTitle", onStartGameTouched)
 	mainMenu:removeEventListener("hideComplete", onTitleScreenHideComplete)
 	mainMenu:destroy()
@@ -41,36 +41,28 @@ function onTitleScreenHideComplete()
 
   	hud = HUD:new()
   	hud:show()
-  	hud:addEventListener("onTogglePause", onPauseTouch)
 end
 
 local function startGame()
-	display.setStatusBar(display.HiddenStatusBar)
-
     mainMenu = MainMenu:new()
   	mainMenu:addEventListener("onStartGameTouched", onStartGameTouched)
 	mainMenu:addEventListener("onMainMenuHideComplete", onTitleScreenHideComplete)
  	mainMenu:show()
 end
 
-
-
 local function pauseGame()
 	print("pauseGame")
 	mainLoop:pause()
-	Runtime:removeEventListener("touch", onTouch)
 	if (pauseScreen == nil)   then
-	     pauseScreen = PauseScreen:new(togglePause)
+	     pauseScreen = PauseScreen:new()
 	end
 	pauseScreen:show()
-	return true
 end
 
 local function unpauseGame()
 	print("unpauseGame")
 	mainLoop:reset()
 	mainLoop:start()
-	return true
 end
 
 function togglePause()

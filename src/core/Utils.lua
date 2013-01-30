@@ -9,3 +9,12 @@ function protect_table (tbl)
     })
 
 end -- function protect_table
+
+function showProps(o)
+	print("-- showProps --")
+	print("o: ", o)
+	for key,value in pairs(o) do
+		print("key: ", key, ", value: ", value);
+	end
+	print("-- end showProps --")
+end
