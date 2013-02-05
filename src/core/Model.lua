@@ -16,7 +16,9 @@ function Model:new()
 		value = math.max(value, 0)
 		self.hightScore = self.hightScore + value
 		Runtime:dispatchEvent({target=self, name="ModelScoreChaged"})
-	end
+    end
+
+    return model
 end
 
 return PlayerModel

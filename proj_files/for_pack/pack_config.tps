@@ -2,7 +2,7 @@
 <data version="1.0">
     <struct type="Settings">
         <key>fileFormatVersion</key>
-        <int>0</int>
+        <int>1</int>
         <key>variation</key>
         <string>main</string>
         <key>verbose</key>
@@ -56,7 +56,7 @@
             </struct>
         </struct>
         <key>shapePadding</key>
-        <uint>2</uint>
+        <uint>0</uint>
         <key>jpgQuality</key>
         <uint>80</uint>
         <key>pngOptimizationLevel</key>
@@ -66,7 +66,7 @@
         <key>textureFormat</key>
         <enum type="SettingsBase::TextureFormat">png</enum>
         <key>borderPadding</key>
-        <uint>2</uint>
+        <uint>0</uint>
         <key>maxTextureSize</key>
         <QSize>
             <key>width</key>
@@ -98,7 +98,7 @@
             <key>maxRects</key>
             <struct type="AlgorithmMaxRectsSettings">
                 <key>heuristic</key>
-                <enum type="AlgorithmMaxRectsSettings::Heuristic">Best</enum>
+                <enum type="AlgorithmMaxRectsSettings::Heuristic">ContactPoint</enum>
             </struct>
             <key>basic</key>
             <struct type="AlgorithmBasicSettings">
@@ -135,7 +135,7 @@
         <key>outputFormat</key>
         <enum type="SettingsBase::OutputFormat">RGBA8888</enum>
         <key>autoAliasEnabled</key>
-        <true/>
+        <false/>
         <key>trimSpriteNames</key>
         <false/>
         <key>globalSpriteSettings</key>
@@ -151,29 +151,29 @@
             <key>trimThreshold</key>
             <uint>1</uint>
             <key>trimMode</key>
-            <enum type="SpriteSettings::TrimMode">Trim</enum>
+            <enum type="SpriteSettings::TrimMode">None</enum>
             <key>heuristicMask</key>
             <false/>
         </struct>
         <key>fileList</key>
         <array>
-            <filename>shadow_back.png</filename>
-            <filename>sound_off.png</filename>
-            <filename>sound_on.png</filename>
-            <filename>twitter_icon.png</filename>
-            <filename>background_menu.png</filename>
-            <filename>back_middle2.png</filename>
-            <filename>back_middle.png</filename>
-            <filename>back_bottom.png</filename>
             <filename>back_top.png</filename>
-            <filename>beaver.png</filename>
-            <filename>button_continue.png</filename>
+            <filename>back_middle_t.png</filename>
+            <filename>back_middle_b.png</filename>
+            <filename>back_bottom.png</filename>
+            <filename>shadow_back.png</filename>
             <filename>button_mainmenu.png</filename>
-            <filename>button_pause.png</filename>
-            <filename>button_play.png</filename>
             <filename>button_playagain.png</filename>
-            <filename>fb_icon.png</filename>
             <filename>game_over.png</filename>
+            <filename>button_continue.png</filename>
+            <filename>background_menu.png</filename>
+            <filename>button_play.png</filename>
+            <filename>twitter_icon.png</filename>
+            <filename>fb_icon.png</filename>
+            <filename>sound_on.png</filename>
+            <filename>sound_off.png</filename>
+            <filename>beaver.png</filename>
+            <filename>button_pause.png</filename>
             <filename>heart.png</filename>
         </array>
         <key>ignoreFileList</key>
@@ -181,8 +181,8 @@
         <key>replaceList</key>
         <array/>
         <key>commonDivisorX</key>
-        <uint>4</uint>
+        <uint>1</uint>
         <key>commonDivisorY</key>
-        <uint>4</uint>
+        <uint>1</uint>
     </struct>
 </data>

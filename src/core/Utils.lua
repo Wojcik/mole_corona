@@ -18,3 +18,12 @@ function showProps(o)
 	end
 	print("-- end showProps --")
 end
+
+function stopTween(tween)
+  assert("stop")
+	if tween ~= nil then
+		if tween.pause then tween:pause() end
+		if tween.onComplete then tween.onComplete = nil end
+		transition.cancel(tween)
+	end
+end
