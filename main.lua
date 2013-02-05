@@ -5,9 +5,14 @@ require "src.GUI.MainMenu"
 require "src.objects.Level"
 require "src.GUI.HUD"
 require "src.GUI.PauseScreen"
+require "src.core.Model"
 
 display.setStatusBar(display.HiddenStatusBar)
-
+--[[local model
+local mainMenu
+local mainLoop
+local hud
+local level   ]]--
 local function initGlobals()
     _G.stage = display.getCurrentStage()
     _G.mainLoop = MainLoop:new()
@@ -44,6 +49,8 @@ local function onTitleScreenHideComplete()
 end
 
 local function startGame()
+    model = Model:new()
+
     mainMenu = MainMenu:new()
   	mainMenu:addEventListener("onStartGameTouched", onStartGameTouched)
 	mainMenu:addEventListener("onMainMenuHideComplete", onTitleScreenHideComplete)

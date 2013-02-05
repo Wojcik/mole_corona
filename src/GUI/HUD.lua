@@ -1,5 +1,5 @@
 HUD = {}
-local NUM_LIVES = 3
+
 local SCREENS_MARGINS = {}
 SCREENS_MARGINS["l"] = 10
 SCREENS_MARGINS["t"] = 10
