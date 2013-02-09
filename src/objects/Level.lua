@@ -1,83 +1,118 @@
 require "src.core.Constants"
 require "src.core.Utils"
 require "src.objects.SceneController"
+require("src.objects.Beaver")
 Level = {}
 
 function Level:new()
+	local level = {}
+	level.currentInitState = 1
+	level.textobj = nil
+	level.inited = false
+	level.screen = display.newGroup()
+	level.beavers = {}
+	level.controller = SceneControler:new(level.beavers);
 
-  local controller = SceneControler:new();
-  local currentInitState = 1
-  local textobj
-  local inited = false
-  local screen = display.newGroup()
+	level.back_top = display.newImage(myImageSheet , sheetInfo:getFrameIndex("back_top"))
+	level.back_top:setReferencePoint(display.TopLeftReferencePoint)
+	level.screen:insert(level.back_top)
 
-  --[[  local back = display.newImage(myImageSheet , sheetInfo:getFrameIndex("background"))
-  back:setReferencePoint(display.TopLeftReferencePoint)
-  screen:insert(back)]]--
-
-  local back_top = display.newImage(myImageSheet , sheetInfo:getFrameIndex("back_top"))
-  back_top:setReferencePoint(display.TopLeftReferencePoint)
-  screen:insert(back_top)
-
-
-  local back_middle = display.newImage(myImageSheet , sheetInfo:getFrameIndex("back_middle_t"))
-  back_middle:setReferencePoint(display.TopLeftReferencePoint)
-  back_middle.y = 125
-  screen:insert(back_middle)
-
-  local back_middle2 = display.newImage(myImageSheet , sheetInfo:getFrameIndex("back_middle_b"))
-  back_middle2:setReferencePoint(display.TopLeftReferencePoint)
-  back_middle2.y = 202
-  screen:insert(back_middle2)
-
-  local back_bottom = display.newImage(myImageSheet , sheetInfo:getFrameIndex("back_bottom"))
-  back_bottom:setReferencePoint(display.TopLeftReferencePoint)
-  back_bottom.y = 283
-  screen:insert(back_bottom)
-
-  screen.alpha = 0
-
-  local function startCount()
-	if currentInitState == 4 then
-	  inited = true
-	  return
+	local i = 0
+	while(i < 15) do
+		local beaver = Beaver:new(level.screen.numChildren, i + 1)
+		level.screen:insert( beaver.sprite)
+		table.insert(level.beavers, beaver)
+		i = i + 1;
 	end
-	if (textobj == nil) then
-	  local font  = "Agent Orange" or native.systemFont
-	  textobj = display.newText("", 50, 50, font, 24)
-	  textobj:setReferencePoint(display.CenterReferencePoint)
-	  textobj:setTextColor(217, 103, 22)
+
+	level.back_middle = display.newImage(myImageSheet , sheetInfo:getFrameIndex("back_middle_t"))
+	level.back_middle:setReferencePoint(display.TopLeftReferencePoint)
+	level.back_middle.y = 125
+	level.screen:insert(7, level.back_middle)
+
+	level.back_middle2 = display.newImage(myImageSheet , sheetInfo:getFrameIndex("back_middle_b"))
+	level.back_middle2:setReferencePoint(display.TopLeftReferencePoint)
+	level.back_middle2.y = 202
+	level.screen:insert(13, level.back_middle2)
+
+	level.back_bottom = display.newImage(myImageSheet , sheetInfo:getFrameIndex("back_bottom"))
+	level.back_bottom:setReferencePoint(display.TopLeftReferencePoint)
+	level.back_bottom.y = 283
+	level.screen:insert(19, level.back_bottom)
+
+	level.screen.alpha = 0
+	local function nextStep()
+		level:startCount()
 	end
-	textobj.xScale, textobj.yScale = 1,1
-	textobj.alpha = 1
-	textobj.x = display.contentWidth *0.5
-	textobj.y = display.contentHeight *0.5
-	textobj.text = Constants.LEVEL_INIT_STATES[currentInitState]
 
-	local delay = 0
-	if (currentInitState == 1)  then
-	  delay = 500
+	function level:startCount()
+		if self.currentInitState == 4 then
+			self.textobj:removeSelf()
+			self.textObjTransitionHandle = nil
+			self.textobj = nil
+			self.inited = true
+			return
+		end
+		if (self.textobj == nil) then
+			local font  = "Agent Orange" or native.systemFont
+			self.textobj = display.newText("", 50, 50, font, 24)
+			self.textobj:setReferencePoint(display.CenterReferencePoint)
+			self.textobj:setTextColor(217, 103, 22)
+		end
+		self.textobj.xScale, self.textobj.yScale = 1,1
+		self.textobj.alpha = 1
+		self.textobj.x = display.contentWidth *0.5
+		self.textobj.y = display.contentHeight *0.5
+		self.textobj.text = Constants.LEVEL_INIT_STATES[self.currentInitState]
+
+		local delay = 0
+		if (self.currentInitState == 1)  then
+			delay = 500
+		end
+		self.textObjTransitionHandle =  transition.to(self.textobj, {time=500, delay=delay, xScale=10, yScale = 10, alpha = 0, transition=easing.inExponential, onComplete=nextStep})
+		self.currentInitState = self.currentInitState + 1;
 	end
-	transition.to(textobj, {time=500, delay=delay, xScale=10, yScale = 10, alpha = 0, transition=easing.inExponential, onComplete=startCount})
-	currentInitState = currentInitState + 1;
-  end
 
-  function screen:show()
-	print("show")
-	transition.to(screen, {time=1000, alpha=1, transition=easing.linear})
-	startCount()
-  end
-
-  function screen:update(dt)
-	if (inited == false) then
-	  return
+	function level:show()
+		transition.to(self.screen, {time=200, alpha=1, transition=easing.linear})
+		self:startCount()
 	end
-	controller:update(dt)
-  end
 
-  return screen
+	function level:pause(value)
+		print(value, "pause")
+
+		transition.cancel(self.textObjTransitionHandle)
+		pauseAll = value
+	end
+
+	function level:update(dt)
+		if (self.inited == false) then
+			return
+		end
+		self.controller:update(dt)
+	end
+
+	function level:reset()
+		self.currentInitState = 1
+		self.inited = false
+		self.controller:reset()
+		self:startCount()
+	end
+
+	function level:destroy()
+
+		local beavers = self.beavers
+		for i,v in ipairs(beavers) do
+			v:destroy()
+		end
+		self.beavers = nil
+		self.screen:removeSelf()
+		self.screen = nil
+		self.controller:destroy()
+		self.controller = nil
+	end
+
+	return level
 end
-
-
 
 return Level

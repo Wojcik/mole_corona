@@ -1,7 +1,7 @@
 --
 -- created with TexturePacker (http://www.texturepacker.com)
 --
--- $TexturePacker:SmartUpdate:1acd9832c7b2aa46b6cf3e640cece814$
+-- $TexturePacker:SmartUpdate:0a64b8fb050cc01054594cd9b4fc4630$
 --
 -- local sheetInfo = require("myExportedImageSheet") -- lua file that Texture packer published
 --
@@ -60,6 +60,14 @@ SheetInfo.sheet =
         },
         {
             -- beaver
+            x=368,
+            y=609,
+            width=63,
+            height=54,
+
+        },
+        {
+            -- beaver_dead
             x=897,
             y=513,
             width=63,
@@ -84,7 +92,7 @@ SheetInfo.sheet =
         },
         {
             -- button_pause
-            x=608,
+            x=661,
             y=561,
             width=34,
             height=34,
@@ -108,8 +116,8 @@ SheetInfo.sheet =
         },
         {
             -- fb_icon
-            x=527,
-            y=609,
+            x=608,
+            y=561,
             width=53,
             height=53,
 
@@ -124,8 +132,8 @@ SheetInfo.sheet =
         },
         {
             -- heart
-            x=580,
-            y=609,
+            x=695,
+            y=561,
             width=23,
             height=22,
 
@@ -140,7 +148,7 @@ SheetInfo.sheet =
         },
         {
             -- sound_off
-            x=474,
+            x=537,
             y=609,
             width=53,
             height=53,
@@ -148,7 +156,7 @@ SheetInfo.sheet =
         },
         {
             -- sound_on
-            x=421,
+            x=484,
             y=609,
             width=53,
             height=53,
@@ -156,7 +164,7 @@ SheetInfo.sheet =
         },
         {
             -- twitter_icon
-            x=368,
+            x=431,
             y=609,
             width=53,
             height=53,
@@ -177,18 +185,19 @@ SheetInfo.frameIndex =
     ["back_top"] = 4,
     ["background_menu"] = 5,
     ["beaver"] = 6,
-    ["button_continue"] = 7,
-    ["button_mainmenu"] = 8,
-    ["button_pause"] = 9,
-    ["button_play"] = 10,
-    ["button_playagain"] = 11,
-    ["fb_icon"] = 12,
-    ["game_over"] = 13,
-    ["heart"] = 14,
-    ["shadow_back"] = 15,
-    ["sound_off"] = 16,
-    ["sound_on"] = 17,
-    ["twitter_icon"] = 18,
+    ["beaver_dead"] = 7,
+    ["button_continue"] = 8,
+    ["button_mainmenu"] = 9,
+    ["button_pause"] = 10,
+    ["button_play"] = 11,
+    ["button_playagain"] = 12,
+    ["fb_icon"] = 13,
+    ["game_over"] = 14,
+    ["heart"] = 15,
+    ["shadow_back"] = 16,
+    ["sound_off"] = 17,
+    ["sound_on"] = 18,
+    ["twitter_icon"] = 19,
 }
 
 function SheetInfo:getSheet()

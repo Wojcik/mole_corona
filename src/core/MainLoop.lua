@@ -58,6 +58,11 @@ function MainLoop:new()
 		print("MainLoop::pause")
 		self.paused = true
 		Runtime:removeEventListener("enterFrame", self)
+
+		local tickers = self.tickListeners
+		for i,v in ipairs(tickers) do
+			v:pause(true)
+		end
 	end
 
 	function mainLoop:reset()
@@ -69,6 +74,17 @@ function MainLoop:new()
 		self.paused = false
 		Runtime:removeEventListener("enterFrame", self)
 		Runtime:addEventListener("enterFrame", self)
+		local tickers = self.tickListeners
+		for i,v in ipairs(tickers) do
+			v:pause(false)
+		end
+	end
+
+	function mainLoop:clearListeners()
+		local tickers = self.tickListeners
+		for i,v in ipairs(tickers) do
+			table.remove(tickers, i)
+		end
 	end
 
 	return mainLoop

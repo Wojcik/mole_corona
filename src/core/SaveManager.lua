@@ -1,6 +1,8 @@
+--thanks for http://omnigeek.robmiracle.com
 local json = require("json")
 
 function saveTable(t, filename)
+
     local path = system.pathForFile( filename, system.DocumentsDirectory)
     local file = io.open(path, "w")
     if file then

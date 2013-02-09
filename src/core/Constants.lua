@@ -1,10 +1,20 @@
 Constants = {}
 
-Constants.DIFF_COEFF = 2
-Constants.SHOW_INTERVAL = 2000
-Constants.HIDE_INTERVAL = 2000
-Constants.DIFF_INCREASE_TIME = 6*1000
+Constants.SAVE_FILE_NAME = "save.json"
 
+Constants.NUM_LIVES = 3
+-- add to score when player hit beaver
+Constants.HIT_POINT = 500
+-- coefficient which increase difficulty (SHOW_INTERVAL and HIDE_INTERVAL) every DIFF_INCREASE_TIME
+Constants.DIFF_COEFF = 2
+-- every SHOW_INTERVAL ms beaver will appear
+Constants.SHOW_INTERVAL = 2000
+-- beaver will be outside hole HIDE_INTERVAL ms
+Constants.HIDE_INTERVAL = 2000
+-- every  DIFF_INCREASE_TIME ms difficulty (SHOW_INTERVAL and HIDE_INTERVAL) will be divided by DIFF_COEFF
+Constants.DIFF_INCREASE_TIME = 10*1000
+
+-- level init phases
 Constants.LEVEL_INIT_STATES = {
   [1] = "READY",
   [2] = "STADY",
@@ -12,6 +22,7 @@ Constants.LEVEL_INIT_STATES = {
   [4] = nil
 }
 
+--coords for each hole in level (left to right by rows)
 Constants.HOLES_POSITIONS = {
   [1] = {44, 116},
   [2] = {138, 116},

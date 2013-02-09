@@ -39,9 +39,6 @@
     <breakpoint_rules />
     <ui_properties />
   </component>
-  <component name="DependencyValidationManager">
-    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
-  </component>
   <component name="IdProvider" IDEtalkID="FA7026A7CD82FD5C6D638EA804150B29" />
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" />
@@ -80,7 +77,7 @@
   <component name="ProjectResources">
     <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="Kahlua" project-jdk-type="Lua SDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="Lua 5.1.4" project-jdk-type="Lua SDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="RunManager">
