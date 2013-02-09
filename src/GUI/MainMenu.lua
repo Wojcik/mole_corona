@@ -41,7 +41,7 @@ function MainMenu:new()
 		if(event.phase == "ended") then
 			-- in main.lua
 			toggleSounds()
-			if (sounds.muted) then
+			if not model.memento.soundsOn then
 				mainMenu.toggleSounds:setSequence( "off" )
 			else
 				mainMenu.toggleSounds:setSequence( "on" )
@@ -51,7 +51,8 @@ function MainMenu:new()
 	end
 
 	mainMenu.toggleSounds:addEventListener("touch", onToggleSounds)
-	mainMenu.toggleSounds:setSequence( "on" )
+	local seqName = model.memento.soundsOn and "on" or "off"
+	mainMenu.toggleSounds:setSequence( seqName )
 	mainMenu.btnsScreen:insert(mainMenu.toggleSounds)
 	print(mainMenu.toggleSounds.y, mainMenu.toggleSounds.height)
 	------------------------------------------------------------------------------------------------------------

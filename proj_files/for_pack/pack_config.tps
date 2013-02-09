@@ -56,7 +56,7 @@
             </struct>
         </struct>
         <key>shapePadding</key>
-        <uint>0</uint>
+        <uint>1</uint>
         <key>jpgQuality</key>
         <uint>80</uint>
         <key>pngOptimizationLevel</key>
@@ -170,9 +170,6 @@
             <filename>button_play.png</filename>
             <filename>twitter_icon.png</filename>
             <filename>fb_icon.png</filename>
-            <filename>sound_on.png</filename>
-            <filename>sound_off.png</filename>
-            <filename>beaver.png</filename>
             <filename>button_pause.png</filename>
             <filename>heart.png</filename>
         </array>

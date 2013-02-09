@@ -39,6 +39,7 @@ function Model:new()
 
 	function model:reset()
 		self.hp = Constants.NUM_LIVES
+		self.currentScore = 0
 	end
 
     function model:register()

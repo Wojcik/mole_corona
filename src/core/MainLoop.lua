@@ -61,7 +61,9 @@ function MainLoop:new()
 
 		local tickers = self.tickListeners
 		for i,v in ipairs(tickers) do
-			v:pause(true)
+			if v.pause ~=nil then
+				v:pause(true)
+			end
 		end
 	end
 
@@ -76,7 +78,9 @@ function MainLoop:new()
 		Runtime:addEventListener("enterFrame", self)
 		local tickers = self.tickListeners
 		for i,v in ipairs(tickers) do
-			v:pause(false)
+			if v.pause ~=nil then
+				v:pause(false)
+			end
 		end
 	end
 

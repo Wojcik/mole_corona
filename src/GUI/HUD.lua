@@ -10,7 +10,7 @@ SCREENS_MARGINS["t"] = 10
 SCREENS_MARGINS["r"] = 10
 SCREENS_MARGINS = protect_table(SCREENS_MARGINS)
 
-local TEXT_SIZE = 20
+local TEXT_SIZE = 16
 
 function HUD:new()
 
@@ -30,7 +30,7 @@ function HUD:new()
 	end
 
 	--score text field
-	local font  = "Agent Orange" or native.systemFont
+	local font  = "monoMMM_5" or native.systemFont
 	hud.scoreTf = display.newText(Locale.SCORE, 0, 0, font, TEXT_SIZE)
 	hud.scoreTf:setTextColor(255, 255, 255)
 	hud.scoreGroup:insert(hud.scoreTf)
@@ -48,7 +48,10 @@ function HUD:new()
 	hud.highScoreValue:setTextColor(255, 255, 0)
 	hud.scoreGroup:insert(hud.highScoreValue)
 
-	hud.scoreGroup.x = (display.contentWidth - hud.scoreGroup.width)*0.5
+	--hud.scoreGroup.x = (display.contentWidth - hud.scoreGroup.width)*0.5
+
+	local lastHeart =  hud.heartsIcons[Constants.NUM_LIVES]
+	hud.scoreGroup.x =lastHeart.x + lastHeart.width + 10
 	hud.scoreGroup.y = SCREENS_MARGINS["t"]
 	-----------------------------------------------------------------------------------------------------------------
 

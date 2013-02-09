@@ -12,7 +12,7 @@ Constants.SHOW_INTERVAL = 2000
 -- beaver will be outside hole HIDE_INTERVAL ms
 Constants.HIDE_INTERVAL = 2000
 -- every  DIFF_INCREASE_TIME ms difficulty (SHOW_INTERVAL and HIDE_INTERVAL) will be divided by DIFF_COEFF
-Constants.DIFF_INCREASE_TIME = 10*1000
+Constants.DIFF_INCREASE_TIME = 20*1000
 
 -- level init phases
 Constants.LEVEL_INIT_STATES = {
@@ -24,21 +24,21 @@ Constants.LEVEL_INIT_STATES = {
 
 --coords for each hole in level (left to right by rows)
 Constants.HOLES_POSITIONS = {
-  [1] = {44, 116},
-  [2] = {138, 116},
-  [3] = {232, 116},
-  [4] = {328, 116},
-  [5] = {423, 116},
+  [1] = {46, 118},
+  [2] = {140, 118},
+  [3] = {234, 118},
+  [4] = {330, 118},
+  [5] = {425, 118},
 
-  [6] = {44, 190},
-  [7] = {138, 190},
-  [8] = {232, 190},
-  [9] = {328, 190},
-  [10] = {423, 190},
+  [6] = {46, 192},
+  [7] = {141, 192},
+  [8] = {236, 192},
+  [9] = {331, 192},
+  [10] = {426, 192},
 
-  [11] = {44, 270},
-  [12] = {138, 270},
-  [13] = {232, 270},
-  [14] = {328, 270},
-  [15] = {423, 270}
+  [11] = {46, 272},
+  [12] = {141, 272},
+  [13] = {236, 272},
+  [14] = {331, 272},
+  [15] = {426, 272}
 }

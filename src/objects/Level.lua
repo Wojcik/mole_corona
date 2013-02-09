@@ -41,20 +41,17 @@ function Level:new()
 	level.screen:insert(19, level.back_bottom)
 
 	level.screen.alpha = 0
-	local function nextStep()
-		level:startCount()
-	end
 
 	function level:startCount()
 		if self.currentInitState == 4 then
 			self.textobj:removeSelf()
-			self.textObjTransitionHandle = nil
+			self.tween = nil
 			self.textobj = nil
 			self.inited = true
 			return
 		end
 		if (self.textobj == nil) then
-			local font  = "Agent Orange" or native.systemFont
+			local font  = "BadaBoom BB" or native.systemFont
 			self.textobj = display.newText("", 50, 50, font, 24)
 			self.textobj:setReferencePoint(display.CenterReferencePoint)
 			self.textobj:setTextColor(217, 103, 22)
@@ -65,24 +62,18 @@ function Level:new()
 		self.textobj.y = display.contentHeight *0.5
 		self.textobj.text = Constants.LEVEL_INIT_STATES[self.currentInitState]
 
-		local delay = 0
-		if (self.currentInitState == 1)  then
-			delay = 500
-		end
-		self.textObjTransitionHandle =  transition.to(self.textobj, {time=500, delay=delay, xScale=10, yScale = 10, alpha = 0, transition=easing.inExponential, onComplete=nextStep})
+		self.tween = gtween.new(self.textobj, 0.5, {xScale=15, yScale = 15, alpha = 0})
 		self.currentInitState = self.currentInitState + 1;
+
+		-- on tween finished
+		self.tween.onComplete = function()
+			self:startCount()
+		end
 	end
 
 	function level:show()
 		transition.to(self.screen, {time=200, alpha=1, transition=easing.linear})
 		self:startCount()
-	end
-
-	function level:pause(value)
-		print(value, "pause")
-
-		transition.cancel(self.textObjTransitionHandle)
-		pauseAll = value
 	end
 
 	function level:update(dt)

@@ -1,7 +1,7 @@
 --
 -- created with TexturePacker (http://www.texturepacker.com)
 --
--- $TexturePacker:SmartUpdate:1acd9832c7b2aa46b6cf3e640cece814$
+-- $TexturePacker:SmartUpdate:776281a820ac162f74322e30618c6ee8$
 --
 -- local sheetInfo = require("myExportedImageSheet") -- lua file that Texture packer published
 --
@@ -21,23 +21,23 @@ SheetInfo.sheet =
         {
             -- back_bottom
             x=0,
-            y=465,
+            y=467,
             width=480,
             height=37,
 
         },
         {
             -- back_middle_b
-            x=480,
-            y=320,
+            x=481,
+            y=321,
             width=480,
             height=98,
 
         },
         {
             -- back_middle_t
-            x=480,
-            y=418,
+            x=481,
+            y=420,
             width=480,
             height=95,
 
@@ -45,47 +45,39 @@ SheetInfo.sheet =
         {
             -- back_top
             x=0,
-            y=320,
+            y=321,
             width=480,
             height=145,
 
         },
         {
             -- background_menu
-            x=480,
+            x=481,
             y=0,
             width=480,
             height=320,
 
         },
         {
-            -- beaver
-            x=897,
-            y=513,
-            width=63,
-            height=54,
-
-        },
-        {
             -- button_continue
-            x=634,
-            y=513,
+            x=636,
+            y=516,
             width=263,
             height=48,
 
         },
         {
             -- button_mainmenu
-            x=325,
-            y=561,
+            x=326,
+            y=565,
             width=283,
             height=48,
 
         },
         {
             -- button_pause
-            x=608,
-            y=561,
+            x=610,
+            y=565,
             width=34,
             height=34,
 
@@ -93,23 +85,23 @@ SheetInfo.sheet =
         {
             -- button_play
             x=0,
-            y=502,
+            y=505,
             width=325,
             height=109,
 
         },
         {
             -- button_playagain
-            x=325,
-            y=513,
+            x=326,
+            y=516,
             width=309,
             height=48,
 
         },
         {
             -- fb_icon
-            x=527,
-            y=609,
+            x=423,
+            y=614,
             width=53,
             height=53,
 
@@ -117,15 +109,15 @@ SheetInfo.sheet =
         {
             -- game_over
             x=0,
-            y=611,
+            y=615,
             width=368,
             height=59,
 
         },
         {
             -- heart
-            x=580,
-            y=609,
+            x=900,
+            y=516,
             width=23,
             height=22,
 
@@ -139,33 +131,17 @@ SheetInfo.sheet =
 
         },
         {
-            -- sound_off
-            x=474,
-            y=609,
-            width=53,
-            height=53,
-
-        },
-        {
-            -- sound_on
-            x=421,
-            y=609,
-            width=53,
-            height=53,
-
-        },
-        {
             -- twitter_icon
-            x=368,
-            y=609,
+            x=369,
+            y=614,
             width=53,
             height=53,
 
         },
     },
     
-    sheetContentWidth = 960,
-    sheetContentHeight = 677
+    sheetContentWidth = 961,
+    sheetContentHeight = 679
 }
 
 SheetInfo.frameIndex =
@@ -176,19 +152,16 @@ SheetInfo.frameIndex =
     ["back_middle_t"] = 3,
     ["back_top"] = 4,
     ["background_menu"] = 5,
-    ["beaver"] = 6,
-    ["button_continue"] = 7,
-    ["button_mainmenu"] = 8,
-    ["button_pause"] = 9,
-    ["button_play"] = 10,
-    ["button_playagain"] = 11,
-    ["fb_icon"] = 12,
-    ["game_over"] = 13,
-    ["heart"] = 14,
-    ["shadow_back"] = 15,
-    ["sound_off"] = 16,
-    ["sound_on"] = 17,
-    ["twitter_icon"] = 18,
+    ["button_continue"] = 6,
+    ["button_mainmenu"] = 7,
+    ["button_pause"] = 8,
+    ["button_play"] = 9,
+    ["button_playagain"] = 10,
+    ["fb_icon"] = 11,
+    ["game_over"] = 12,
+    ["heart"] = 13,
+    ["shadow_back"] = 14,
+    ["twitter_icon"] = 15,
 }
 
 function SheetInfo:getSheet()

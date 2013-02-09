@@ -19,6 +19,8 @@ local gameOverScreen
 
 local function initGlobals()
     _G.mainLoop = MainLoop:new()
+    pauseAll = false
+    gtween = require("imported.gtween")
 
     sheetInfo = require("spritesheet")
     _G.myImageSheet = graphics.newImageSheet( "spritesheet.png", sheetInfo:getSheet() )
@@ -28,6 +30,13 @@ local function initGlobals()
 
     soundSheetInfo = require("soundsSheet")
     _G.soundsSprSheet = graphics.newImageSheet( "soundsSheet.png", soundSheetInfo:getSheet() )
+
+    model = Model:new()
+    model:register()
+    sounds = Sounds:new()
+    if (model.memento.soundsOn) then
+        sounds:play()
+	end
 end
 
 local function onGameOver(event)
@@ -56,6 +65,7 @@ local function onMenuHideComplete()
   	hud:show()
 
 	model:reset()
+	pauseAll = false
 	Runtime:addEventListener(Events.GAME_OVER, onGameOver)
 end
 
@@ -67,32 +77,35 @@ local function showMainMenu()
 end
 
 local function startGame()
-    model = Model:new()
-    model:register()
-    sounds = Sounds:new()
-    sounds:play()
 	showMainMenu()
     Runtime:addEventListener(Events.ON_GO_TO_MENU, onGoToMenu)
 end
 
 
 local function pauseGame()
-	print("pauseGame")
+	if pauseAll or mainMenu~= nil then
+		print("already on pause")
+		return
+	end
 	mainLoop:pause()
 	if (pauseScreen == nil)   then
 	     pauseScreen = PauseScreen:new()
 	end
 	pauseScreen:show()
+	pauseAll = true
 end
 
 local function unpauseGame()
-	print("unpauseGame")
+	if not pauseAll then
+		return
+	end
 	mainLoop:reset()
 	mainLoop:start()
+	pauseAll = false
 end
 
 function togglePause()
-  print("togglePause")
+
 	if(mainLoop.paused == true) then
 		return unpauseGame()
 	else
@@ -101,12 +114,12 @@ function togglePause()
 end
 
 function toggleSounds()
-	print("toggleSounds")
-	if(sounds.muted == true) then
+	if not model.memento.soundsOn then
 		sounds:play()
 	else
 		sounds:stop()
 	end
+	model.memento.soundsOn = not model.memento.soundsOn
 end
 
 
@@ -168,13 +181,16 @@ function onRestart(event)
 	restartGame()
 end
 
-initGlobals()
-startGame()
-
-
 local function onSystemEvent( event )
-	if event.type == "applicationSuspend" then
-		pauseGame()
+	if event.type == "applicationStart" then
+		initGlobals()
+		startGame()
+	elseif event.type == "applicationExit" then
+		model:save()
+	elseif event.type == "applicationSuspend" then
+		if not gameOverScreen then
+			pauseGame()
+		end
 		model:save()
 	end
 end

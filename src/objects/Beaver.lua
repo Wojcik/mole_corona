@@ -2,8 +2,6 @@ require "src.core.Constants"
 require "src.core.Events"
 Beaver = {}
 
-gtween = require("imported.gtween")
-
 local START_DISPLACEMENT_Y = 50
 
 function Beaver:new(holeIndex)
@@ -22,7 +20,8 @@ function Beaver:new(holeIndex)
 		if(event.phase == "ended" and self.killed == false) then
 			self.killed = true
 			self.sprite:setSequence( "dead" )
-			system.vibrate()
+			--system.vibrate()
+			sounds:playHit()
 			Runtime:dispatchEvent({name=Events.KILL_BEAVER})
 			return true
 		end
@@ -37,8 +36,7 @@ function Beaver:new(holeIndex)
 		self.sprite.x = self.targetPoint[1]
 		self.sprite.y = self.targetPoint[2] + START_DISPLACEMENT_Y
 		self.tween = gtween.new(self.sprite, 0.2, {y = self.targetPoint[2]})
-		self.tween.onChange = function(tween)
-		end
+		sounds:playAppear()
 		self.tween.onComplete = function()
 			self.tween:pause()
 			self.tween = nil
@@ -46,14 +44,12 @@ function Beaver:new(holeIndex)
 	end
 
 	function beaver:hide()
-		print("beaver hide")
 		self.tween = gtween.new(self.sprite, 0.2, {y = self.targetPoint[2] + START_DISPLACEMENT_Y})
-		self.tween.onChange = function(tween)
-		end
-
+		sounds:playAppear()
 		self.tween.onComplete = function()
 			if (self.killed == false) then
 				print("SURVIVED_BEAVER")
+				sounds:playMiss()
 				self.sprite.isVisible = false
 				Runtime:dispatchEvent({name=Events.SURVIVED_BEAVER})
 				self.tween:pause()

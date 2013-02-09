@@ -77,8 +77,6 @@ local function invalidate(tween)
 		tween:play()
 	end
 end
-
-pauseAll = false
 	
 local function setValues(tween, newValues)
 	copyTableTo(newValues, tween.values)
