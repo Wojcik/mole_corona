@@ -51,7 +51,7 @@ function MainMenu:new()
 	end
 
 	mainMenu.toggleSounds:addEventListener("touch", onToggleSounds)
-	local seqName = model.memento.soundsOn and "on" or "off"
+	local seqName = model.memento.soundOn and "on" or "off"
 	mainMenu.toggleSounds:setSequence( seqName )
 	mainMenu.btnsScreen:insert(mainMenu.toggleSounds)
 	print(mainMenu.toggleSounds.y, mainMenu.toggleSounds.height)

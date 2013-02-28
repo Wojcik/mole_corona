@@ -11,6 +11,7 @@ function Model:new()
 		model.memento = {}
 		model.memento.highScore = 0
 		model.memento.soundOn = true
+        print("init alllllllllllllllllll modeeelll")
 	end
 	model.hp = Constants.NUM_LIVES
 	model.currentScore = 0
@@ -32,6 +33,7 @@ function Model:new()
 		    Runtime:dispatchEvent({name = Events.HP_CHANGED})
 	    end
 	    if (self.hp == 0) then
+
 		    Runtime:dispatchEvent({name=Events.GAME_OVER})
 		    destroy()
 		end

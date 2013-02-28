@@ -157,10 +157,6 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>back_top.png</filename>
-            <filename>back_middle_t.png</filename>
-            <filename>back_middle_b.png</filename>
-            <filename>back_bottom.png</filename>
             <filename>shadow_back.png</filename>
             <filename>button_mainmenu.png</filename>
             <filename>button_playagain.png</filename>
@@ -172,6 +168,7 @@
             <filename>fb_icon.png</filename>
             <filename>button_pause.png</filename>
             <filename>heart.png</filename>
+            <filename>background.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

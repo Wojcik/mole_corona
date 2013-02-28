@@ -6,18 +6,18 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/a.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360136717835" ignored="false" />
     <file path="/PauseScreen.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360362180295" ignored="false" />
-    <file path="/main.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360422770054" ignored="false" />
-    <file path="/MainMenu.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360405626676" ignored="false" />
+    <file path="/main.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1362043795554" ignored="false" />
+    <file path="/MainMenu.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360702736537" ignored="false" />
     <file path="/Constants.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360339572652" ignored="false" />
     <file path="/SceneController.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360324101288" ignored="false" />
-    <file path="/Beaver.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360407402553" ignored="false" />
-    <file path="/Level.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360424972371" ignored="false" />
+    <file path="/Beaver.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360698604402" ignored="false" />
+    <file path="/Level.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1361978640883" ignored="false" />
     <file path="/MainLoop.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360404451044" ignored="false" />
-    <file path="/Events.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360335585843" ignored="false" />
-    <file path="/Model.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360340395815" ignored="false" />
-    <file path="/HUD.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360425793168" ignored="false" />
+    <file path="/Events.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1361962608619" ignored="false" />
+    <file path="/Model.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1362042734312" ignored="false" />
+    <file path="/HUD.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1361965237197" ignored="false" />
     <file path="/SaveManager.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360340216465" ignored="false" />
-    <file path="/GameOverScreen.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360268937296" ignored="false" />
+    <file path="/GameOverScreen.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360786903163" ignored="false" />
     <file path="/Notes" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360251252249" ignored="false" />
     <file path="/a.dummy" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360259277780" ignored="false" />
     <file path="/gtween.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360404532845" ignored="false" />
@@ -25,7 +25,9 @@
     <file path="/Sounds.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360408131231" ignored="false" />
     <file path="$PROJECT_DIR$/proj_files/spritesheet@2x.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360409294440" ignored="false" />
     <file path="$PROJECT_DIR$/proj_files/spritesheet.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360409294806" ignored="false" />
-    <file path="/Utils.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360426279012" ignored="false" />
+    <file path="/Utils.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360701821571" ignored="false" />
+    <file path="/config.lua" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360771940246" ignored="false" />
+    <file path="/build.settings" changelist="b692043e-7950-4a10-9fe5-9cb49e5652d2" time="1360785710402" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +47,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -79,7 +82,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -89,37 +91,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainMenu.lua" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/MainMenu.lua">
+      <file leaf-file-name="Level.lua" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/objects/Level.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="41" selection-start="1422" selection-end="1422" vertical-scroll-proportion="0.0">
+            <state line="107" column="40" selection-start="2770" selection-end="2770" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.lua" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.lua">
+      <file leaf-file-name="gtween.lua" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imported/gtween.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="44" selection-start="1709" selection-end="1709" vertical-scroll-proportion="-2.72">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Model.lua" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/core/Model.lua">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="29" selection-start="1085" selection-end="1085" vertical-scroll-proportion="0.24216524">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.settings" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.settings">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="35" selection-start="452" selection-end="452" vertical-scroll-proportion="0.0">
+            <state line="63" column="30" selection-start="1259" selection-end="1274" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -128,7 +112,25 @@
       <file leaf-file-name="config.lua" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="26" selection-start="72" selection-end="81" vertical-scroll-proportion="0.0">
+            <state line="1" column="30" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.lua" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.lua">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="82" column="19" selection-start="2273" selection-end="2273" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Model.lua" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/core/Model.lua">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="50" selection-start="361" selection-end="361" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -137,16 +139,16 @@
       <file leaf-file-name="Beaver.lua" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/objects/Beaver.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="32" selection-start="1281" selection-end="1281" vertical-scroll-proportion="0.0">
+            <state line="5" column="58" selection-start="100" selection-end="100" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Level.lua" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/objects/Level.lua">
+      <file leaf-file-name="GameOverScreen.lua" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/GameOverScreen.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="38" selection-start="1699" selection-end="1699" vertical-scroll-proportion="0.0">
+            <state line="2" column="23" selection-start="30" selection-end="44" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -155,25 +157,25 @@
       <file leaf-file-name="HUD.lua" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/HUD.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="44" selection-start="2287" selection-end="2299" vertical-scroll-proportion="0.0">
+            <state line="100" column="103" selection-start="3289" selection-end="3289" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Utils.lua" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/core/Utils.lua">
+      <file leaf-file-name="PauseScreen.lua" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/PauseScreen.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="3" selection-start="503" selection-end="503" vertical-scroll-proportion="0.0">
+            <state line="25" column="97" selection-start="813" selection-end="813" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Constants.lua" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/core/Constants.lua">
+      <file leaf-file-name="MainMenu.lua" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/GUI/MainMenu.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="33" selection-start="565" selection-end="565" vertical-scroll-proportion="0.0">
+            <state line="53" column="39" selection-start="1663" selection-end="1663" vertical-scroll-proportion="0.5014749">
               <folding />
             </state>
           </provider>
@@ -192,22 +194,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/core/Locale.lua" />
-        <option value="$PROJECT_DIR$/src/core/SaveManager.lua" />
         <option value="$PROJECT_DIR$/src/GUI/PauseScreen.lua" />
         <option value="$PROJECT_DIR$/src/core/MainLoop.lua" />
         <option value="$PROJECT_DIR$/imported/gtween.lua" />
-        <option value="$PROJECT_DIR$/src/GUI/MainMenu.lua" />
         <option value="$PROJECT_DIR$/src/core/Sounds.lua" />
-        <option value="$PROJECT_DIR$/src/core/Constants.lua" />
-        <option value="$PROJECT_DIR$/src/objects/Beaver.lua" />
-        <option value="$PROJECT_DIR$/build.settings" />
-        <option value="$PROJECT_DIR$/config.lua" />
-        <option value="$PROJECT_DIR$/src/objects/Level.lua" />
-        <option value="$PROJECT_DIR$/src/GUI/HUD.lua" />
         <option value="$PROJECT_DIR$/src/core/Utils.lua" />
-        <option value="$PROJECT_DIR$/main.lua" />
+        <option value="$PROJECT_DIR$/config.lua" />
+        <option value="$PROJECT_DIR$/build.settings" />
+        <option value="$PROJECT_DIR$/src/objects/Beaver.lua" />
+        <option value="$PROJECT_DIR$/src/core/Events.lua" />
+        <option value="$PROJECT_DIR$/src/GUI/HUD.lua" />
+        <option value="$PROJECT_DIR$/src/objects/Level.lua" />
+        <option value="$PROJECT_DIR$/src/GUI/GameOverScreen.lua" />
+        <option value="$PROJECT_DIR$/src/core/Constants.lua" />
         <option value="$PROJECT_DIR$/src/core/Model.lua" />
+        <option value="$PROJECT_DIR$/main.lua" />
+        <option value="$PROJECT_DIR$/src/GUI/MainMenu.lua" />
       </list>
     </option>
   </component>
@@ -377,11 +379,11 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Problems" />
         <subPane subId="Tests" />
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Favorites" />
     </panes>
   </component>
@@ -390,7 +392,7 @@
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.lastSelected" value="editor.preferences.appearance" />
+    <property name="options.lastSelected" value="preferences.externalTools" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Dropbox/my/corona/corona_sdk_api" />
@@ -400,8 +402,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -541,7 +543,6 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24943139" sideWeight="0.6757216" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31918505" sideWeight="0.6691958" order="12" side_tool="true" content_ui="tabs" />
@@ -552,10 +553,11 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852808" sideWeight="0.6808149" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39984825" sideWeight="0.6808149" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23823975" sideWeight="0.68251276" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31748727" sideWeight="0.32549316" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2439394" sideWeight="0.67972744" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32027256" sideWeight="0.32549316" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297953" sideWeight="0.6757216" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -624,114 +626,99 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/GUI/GameOverScreen.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="1364" selection-end="2027" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/objects/SceneController.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/MainLoop.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="17" selection-start="1442" selection-end="1442" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imported/gtween.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="32" selection-start="827" selection-end="827" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/PauseScreen.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="27" selection-start="1865" selection-end="1865" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/Sounds.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="8" selection-start="711" selection-end="711" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="34" column="8" selection-start="711" selection-end="711" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/Utils.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="3" selection-start="1342" selection-end="1342" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/Constants.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="33" selection-start="565" selection-end="565" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/objects/Beaver.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="32" selection-start="1281" selection-end="1281" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.settings">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="35" selection-start="452" selection-end="452" vertical-scroll-proportion="0.0">
+        <state line="12" column="27" selection-start="421" selection-end="421" vertical-scroll-proportion="-0.7244318">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="26" selection-start="72" selection-end="81" vertical-scroll-proportion="0.0">
+        <state line="1" column="30" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.settings">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="26" selection-start="342" selection-end="342" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/Beaver.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="58" selection-start="100" selection-end="100" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/Events.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="38" selection-start="343" selection-end="357" vertical-scroll-proportion="0.48295453" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imported/gtween.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="30" selection-start="1259" selection-end="1274" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/objects/Level.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="38" selection-start="1699" selection-end="1699" vertical-scroll-proportion="0.0">
+        <state line="107" column="40" selection-start="2770" selection-end="2770" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/HUD.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="44" selection-start="2287" selection-end="2299" vertical-scroll-proportion="0.0">
+        <state line="100" column="103" selection-start="3289" selection-end="3289" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/Utils.lua">
+    <entry file="file://$PROJECT_DIR$/src/GUI/GameOverScreen.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="3" selection-start="503" selection-end="503" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/MainMenu.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="41" selection-start="1422" selection-end="1422" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="44" selection-start="1709" selection-end="1709" vertical-scroll-proportion="-2.72">
+        <state line="2" column="23" selection-start="30" selection-end="44" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/Model.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="29" selection-start="1085" selection-end="1085" vertical-scroll-proportion="0.24216524">
+        <state line="13" column="50" selection-start="361" selection-end="361" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="19" selection-start="2273" selection-end="2273" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/PauseScreen.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="97" selection-start="813" selection-end="813" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/MainMenu.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="39" selection-start="1663" selection-end="1663" vertical-scroll-proportion="0.5014749">
           <folding />
         </state>
       </provider>

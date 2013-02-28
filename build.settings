@@ -13,7 +13,8 @@ settings = {
 			UIStatusBarHidden = true,
 			UIAppFonts = 
 			{
-				"AgentOrange.ttf"
+				"BADABB__.TTF",
+				"monoMMM_5.ttf"
 			}
 		}
 	},

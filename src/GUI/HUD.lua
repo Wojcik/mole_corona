@@ -51,6 +51,7 @@ function HUD:new()
 	--hud.scoreGroup.x = (display.contentWidth - hud.scoreGroup.width)*0.5
 
 	local lastHeart =  hud.heartsIcons[Constants.NUM_LIVES]
+    --position group between hearts and pause button
 	hud.scoreGroup.x =lastHeart.x + lastHeart.width + 10
 	hud.scoreGroup.y = SCREENS_MARGINS["t"]
 	-----------------------------------------------------------------------------------------------------------------
@@ -61,6 +62,7 @@ function HUD:new()
 		if(event.phase == "ended") then
 		  	-- in main.lua
 		  	togglePause()
+            print("pause touch");
 		end
 		return true
 	end
@@ -90,20 +92,27 @@ function HUD:new()
 	function hud:onScoreChanged(event)
 		self.scoreValue.text        = string.format("%06d", model.currentScore)
 		self.highScoreValue.text   = string.format("%06d", model.memento.highScore)
-	end
-
-	function hud:register()
-		Runtime:addEventListener(Events.HP_CHANGED, self)
-		Runtime:addEventListener(Events.SCORE_CHANGED, self)
-	end
+    end
 
 	function hud:clickable(value)
+        print("clickable ", value)
 		if (value)  then
 			self.pauseButton:addEventListener("touch", onTouch)
 		else
 			self.pauseButton:removeEventListener("touch", onTouch)
-		end
-	end
+        end
+    end
+
+
+    function hud:onPauseChanged(event)
+        self:clickable(not event.pause)
+    end
+
+    function hud:register()
+        Runtime:addEventListener(Events.PAUSE_CHANGED, self)
+        Runtime:addEventListener(Events.HP_CHANGED, self)
+        Runtime:addEventListener(Events.SCORE_CHANGED, self)
+    end
 
 	function hud:reset()
 		self:clickable(true)
@@ -112,12 +121,14 @@ function HUD:new()
 		local heartsIcons = self.heartsIcons
 		for i,v in ipairs(heartsIcons) do
 			v.isVisible = true
-		end
+        end
+        self:onScoreChanged()
 	end
 
 	function hud:destroy()
 		Runtime:removeEventListener(Events.HP_CHANGED, self)
 		Runtime:removeEventListener(Events.SCORE_CHANGED, self)
+        Runtime:removeEventListener(Events.PAUSE_CHANGED, self)
 		self.pauseButton:removeEventListener("touch", onTouch)
 		self.screen:removeSelf()
 		self.screen = nil

@@ -10,35 +10,31 @@ function Level:new()
 	level.textobj = nil
 	level.inited = false
 	level.screen = display.newGroup()
+	level.beaversGroup = display.newGroup()
 	level.beavers = {}
 	level.controller = SceneControler:new(level.beavers);
 
-	level.back_top = display.newImage(myImageSheet , sheetInfo:getFrameIndex("back_top"))
+	level.back_top = display.newImage(myImageSheet , sheetInfo:getFrameIndex("background"))
 	level.back_top:setReferencePoint(display.TopLeftReferencePoint)
 	level.screen:insert(level.back_top)
 
+	local mask = graphics.newMask( "beaverMask.jpg")
+	-- apply or re-apply the mask.
+	level.beaversGroup:setMask(nil)
+	level.beaversGroup:setMask(mask)
+
 	local i = 0
 	while(i < 15) do
-		local beaver = Beaver:new(level.screen.numChildren, i + 1)
-		level.screen:insert( beaver.sprite)
+		local beaver = Beaver:new(i+1)
+		level.beaversGroup:insert( beaver.sprite)
 		table.insert(level.beavers, beaver)
 		i = i + 1;
 	end
 
-	level.back_middle = display.newImage(myImageSheet , sheetInfo:getFrameIndex("back_middle_t"))
-	level.back_middle:setReferencePoint(display.TopLeftReferencePoint)
-	level.back_middle.y = 125
-	level.screen:insert(7, level.back_middle)
+	local beaver = level.beavers[1]
+	print(beaver.sprite.width, beaver.sprite.height)
 
-	level.back_middle2 = display.newImage(myImageSheet , sheetInfo:getFrameIndex("back_middle_b"))
-	level.back_middle2:setReferencePoint(display.TopLeftReferencePoint)
-	level.back_middle2.y = 202
-	level.screen:insert(13, level.back_middle2)
-
-	level.back_bottom = display.newImage(myImageSheet , sheetInfo:getFrameIndex("back_bottom"))
-	level.back_bottom:setReferencePoint(display.TopLeftReferencePoint)
-	level.back_bottom.y = 283
-	level.screen:insert(19, level.back_bottom)
+	level.screen:insert(level.beaversGroup)
 
 	level.screen.alpha = 0
 
@@ -95,7 +91,15 @@ function Level:new()
 		local beavers = self.beavers
 		for i,v in ipairs(beavers) do
 			v:destroy()
-		end
+        end
+        if self.textobj ~= nil then
+            self.textobj:removeSelf()
+        end
+        if (self.tween ~= nil) then
+            self.tween:pause()
+        end
+        self.tween = nil
+        self.textobj = nil
 		self.beavers = nil
 		self.screen:removeSelf()
 		self.screen = nil

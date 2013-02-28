@@ -34,9 +34,18 @@ local function initGlobals()
     model = Model:new()
     model:register()
     sounds = Sounds:new()
-    if (model.memento.soundsOn) then
+
+    if (model.memento.soundOn) then
         sounds:play()
-	end
+    end
+
+    local mask = graphics.newMask( "main_mask.jpg")
+    local stage = display.getCurrentStage()
+    -- apply or re-apply the mask.
+    stage:setMask(nil)
+    stage:setMask(mask)
+    stage.maskX = math.floor(display.viewableContentWidth*0.5)
+    stage.maskY = math.floor(display.viewableContentHeight*0.5)
 end
 
 local function onGameOver(event)
@@ -44,11 +53,12 @@ local function onGameOver(event)
 	gameOverScreen:show()
 	mainLoop:pause()
 	hud:clickable(false)
-	Runtime:removeEventListener(Events.GAME_OVER, onGameOver)
 	Runtime:addEventListener(Events.ON_PLAY_AGAIN, onRestart)
 end
 
 local function onMenuHideComplete()
+	model:reset()
+	pauseAll = false
 	Runtime:removeEventListener(Events.ON_MAIN_MENU_HIDE, onMenuHideComplete)
 	mainMenu:destroy()
 	mainMenu = nil
@@ -63,10 +73,7 @@ local function onMenuHideComplete()
   	hud = HUD:new()
 	hud:register()
   	hud:show()
-
-	model:reset()
-	pauseAll = false
-	Runtime:addEventListener(Events.GAME_OVER, onGameOver)
+	hud:onScoreChanged()
 end
 
 local function showMainMenu()
@@ -79,18 +86,18 @@ end
 local function startGame()
 	showMainMenu()
     Runtime:addEventListener(Events.ON_GO_TO_MENU, onGoToMenu)
+    Runtime:addEventListener(Events.GAME_OVER, onGameOver)
 end
 
 
 local function pauseGame()
 	if pauseAll or mainMenu~= nil then
-		print("already on pause")
 		return
-	end
+    end
 	mainLoop:pause()
 	if (pauseScreen == nil)   then
 	     pauseScreen = PauseScreen:new()
-	end
+    end
 	pauseScreen:show()
 	pauseAll = true
 end
@@ -105,12 +112,12 @@ local function unpauseGame()
 end
 
 function togglePause()
-
 	if(mainLoop.paused == true) then
-		return unpauseGame()
+		unpauseGame()
 	else
-		return pauseGame()
-	end
+		pauseGame()
+    end
+    Runtime:dispatchEvent({name = Events.PAUSE_CHANGED, pause = pauseAll })
 end
 
 function toggleSounds()
@@ -141,7 +148,7 @@ local function restartGame()
 	hud:clickable(true)
 
 	mainLoop:start()
-	Runtime:addEventListener(Events.GAME_OVER, onGameOver)
+
 	Runtime:removeEventListener(Events.ON_PLAY_AGAIN, onRestart)
 	print("after restart",system.getInfo("textureMemoryUsed"))
 end
@@ -173,6 +180,7 @@ local function clearAll()
 end
 
 function onGoToMenu(event)
+    print("on go to menu")
 	clearAll()
 	showMainMenu()
 end
