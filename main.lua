@@ -120,12 +120,12 @@ function togglePause()
 end
 
 function toggleSounds()
-	if not model.memento.soundsOn then
+	if not model.memento.soundOn then
 		sounds:play()
 	else
 		sounds:stop()
 	end
-	model.memento.soundsOn = not model.memento.soundsOn
+	model.memento.soundOn = not model.memento.soundOn
 end
 
 

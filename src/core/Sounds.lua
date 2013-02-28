@@ -18,19 +18,19 @@ function Sounds:new()
 	end
 
 	function sounds:playHit()
-		if model.memento.soundsOn then
+		if model.memento.soundOn then
 			audio.play( self.hit )
 		end
 	end
 
 	function sounds:playAppear()
-		if model.memento.soundsOn then
+		if model.memento.soundOn then
 			audio.play( self.appear )
 		end
 	end
 
 	function sounds:playMiss()
-		if model.memento.soundsOn then
+		if model.memento.soundOn then
 			audio.play( self.miss )
 		end
 	end
