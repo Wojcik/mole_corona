@@ -9,6 +9,7 @@ function saveTable(t, filename)
         local contents = json.encode(t)
         file:write( contents )
         io.close( file )
+        print("saveTable ", t, " to file ",filename, " success")
         return true
     else
         return false
@@ -25,6 +26,7 @@ function loadTable(filename)
          local contents = file:read( "*a" )
          myTable = json.decode(contents);
          io.close( file )
+         print("loadTable ",filename, " success")
          return myTable
     end
     return nil

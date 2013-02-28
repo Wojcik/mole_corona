@@ -54,7 +54,6 @@ function MainMenu:new()
 	local seqName = model.memento.soundOn and "on" or "off"
 	mainMenu.toggleSounds:setSequence( seqName )
 	mainMenu.btnsScreen:insert(mainMenu.toggleSounds)
-	print(mainMenu.toggleSounds.y, mainMenu.toggleSounds.height)
 	------------------------------------------------------------------------------------------------------------
 	mainMenu.fbButton = display.newImage( myImageSheet , sheetInfo:getFrameIndex("fb_icon"))
 	mainMenu.fbButton:setReferencePoint(display.TopLeftReferencePoint)

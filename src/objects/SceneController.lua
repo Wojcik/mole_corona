@@ -7,7 +7,6 @@ function SceneControler:new(beaversArray)
 	controller.beaversArray = beaversArray
 
 	function controller:addBeaver()
-		print("controller:addBeaver")
 		if (self.currentBeaver ~= nil) then
 			return
 		end
@@ -16,10 +15,8 @@ function SceneControler:new(beaversArray)
 	end
 
 	function controller:hideBeaver()
-		print("controller:hideBeaver")
 		self.currentBeaver:hide()
 		self.currentBeaver = nil
-
 	end
 
 	function controller:update(dt)
@@ -50,12 +47,13 @@ function SceneControler:new(beaversArray)
 		self.hideBeaverTime			= Constants.HIDE_INTERVAL
 		self.timePassedSinceStart 	= 0
 		self.currentBeaver = nil
+		print("controller:reset")
 	end
 
 	function controller:destroy()
-		print("controller was destroed")
 		self.beaversArray = nil
 		self.currentBeaver = nil
+		print("controller:destroy")
 	end
 
 	controller:reset()

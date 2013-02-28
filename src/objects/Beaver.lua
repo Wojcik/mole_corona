@@ -51,7 +51,6 @@ function Beaver:new(holeIndex)
 		self.tween.onComplete = function()
             self.sprite.isVisible = false
 			if (self.killed == false) then
-				print("SURVIVED_BEAVER")
 				sounds:playMiss()
 				Runtime:dispatchEvent({name=Events.SURVIVED_BEAVER})
 				self.tween:pause()
@@ -68,7 +67,7 @@ function Beaver:new(holeIndex)
 			self.tween = nil
 		end
 		self.targetPoint = nil
-		print("beaver was destroed")
+		print("beaver:destroy")
 	end
 
 	return beaver

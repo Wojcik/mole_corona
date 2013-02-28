@@ -48,10 +48,9 @@ function HUD:new()
 	hud.highScoreValue:setTextColor(255, 255, 0)
 	hud.scoreGroup:insert(hud.highScoreValue)
 
-	--hud.scoreGroup.x = (display.contentWidth - hud.scoreGroup.width)*0.5
 
 	local lastHeart =  hud.heartsIcons[Constants.NUM_LIVES]
-    --position group between hearts and pause button
+
 	hud.scoreGroup.x =lastHeart.x + lastHeart.width + 10
 	hud.scoreGroup.y = SCREENS_MARGINS["t"]
 	-----------------------------------------------------------------------------------------------------------------
@@ -95,7 +94,6 @@ function HUD:new()
     end
 
 	function hud:clickable(value)
-        print("clickable ", value)
 		if (value)  then
 			self.pauseButton:addEventListener("touch", onTouch)
 		else
@@ -132,7 +130,7 @@ function HUD:new()
 		self.pauseButton:removeEventListener("touch", onTouch)
 		self.screen:removeSelf()
 		self.screen = nil
-		print("hud was destroyed")
+		print("hud:destroy")
     end
 	hud:onScoreChanged()
 	return hud

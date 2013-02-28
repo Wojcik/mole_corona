@@ -1,7 +1,6 @@
 GameOverScreen = {}
 
 function GameOverScreen:new()
-    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 	local gameOverScreen = {}
     gameOverScreen.clickable = false
 	gameOverScreen.screen = display.newGroup()
@@ -54,7 +53,6 @@ function GameOverScreen:new()
 	function gameOverScreen:destroy()
 		self.screen:removeSelf()
 		self.screen = nil
-		print("gameOverScreen was destroyed --------------------------------------------")
 	end
 
 	return gameOverScreen

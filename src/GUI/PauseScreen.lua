@@ -52,7 +52,6 @@ function PauseScreen:new()
 		transition.to(screen, {time=250, alpha=1, transition=easing.linear, onComplete=PauseShowComplete})
 	end
 
-	-- hide will calls from PauseScreen
 	function hide()
 		fadeWorking = true
 		transition.to(screen, {time=250, alpha=0, transition=easing.linear, onComplete=PauseHideComplete})

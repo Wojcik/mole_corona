@@ -68,6 +68,7 @@ function MainLoop:new()
 	end
 
 	function mainLoop:reset()
+		print("MainLoop::reset")
 		self.lastTick = system.getTimer()
 	end
 

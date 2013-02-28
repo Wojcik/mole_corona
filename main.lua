@@ -1,5 +1,3 @@
-require "CiderDebugger"-----------------------------------------------------------------------------------------
-
 require "src.core.MainLoop"
 require "src.core.Sounds"
 require "src.GUI.MainMenu"
@@ -11,25 +9,26 @@ require "src.core.Model"
 require "src.core.Events"
 
 display.setStatusBar(display.HiddenStatusBar)
---local model
+
 local mainMenu
 local level
 local hud
 local gameOverScreen
 
+--init all base data
 local function initGlobals()
     _G.mainLoop = MainLoop:new()
     pauseAll = false
     gtween = require("imported.gtween")
 
-    sheetInfo = require("spritesheet")
-    _G.myImageSheet = graphics.newImageSheet( "spritesheet.png", sheetInfo:getSheet() )
+    sheetInfo = require("assets.img.spritesheet")
+    _G.myImageSheet = graphics.newImageSheet( "assets/img/spritesheet.png", sheetInfo:getSheet() )
 
-    beaverSheetInfo = require("beaverSprSheet")
-    _G.beaverSprSheet = graphics.newImageSheet( "beaverSprSheet.png", beaverSheetInfo:getSheet() )
+    beaverSheetInfo = require("assets.img.beaverSprSheet")
+    _G.beaverSprSheet = graphics.newImageSheet( "assets/img/beaverSprSheet.png", beaverSheetInfo:getSheet() )
 
-    soundSheetInfo = require("soundsSheet")
-    _G.soundsSprSheet = graphics.newImageSheet( "soundsSheet.png", soundSheetInfo:getSheet() )
+    soundSheetInfo = require("assets.img.soundsSheet")
+    _G.soundsSprSheet = graphics.newImageSheet( "assets/img/soundsSheet.png", soundSheetInfo:getSheet() )
 
     model = Model:new()
     model:register()
@@ -39,9 +38,9 @@ local function initGlobals()
         sounds:play()
     end
 
-    local mask = graphics.newMask( "main_mask.jpg")
+    --apply mask for devices with aspect ratio not equal  3:2
+    local mask = graphics.newMask( "assets/img/main_mask.jpg")
     local stage = display.getCurrentStage()
-    -- apply or re-apply the mask.
     stage:setMask(nil)
     stage:setMask(mask)
     stage.maskX = math.floor(display.viewableContentWidth*0.5)
@@ -57,11 +56,12 @@ local function onGameOver(event)
 end
 
 local function onMenuHideComplete()
+	mainMenu:destroy()
+	mainMenu = nil
+
 	model:reset()
 	pauseAll = false
 	Runtime:removeEventListener(Events.ON_MAIN_MENU_HIDE, onMenuHideComplete)
-	mainMenu:destroy()
-	mainMenu = nil
 
 	mainLoop:reset()
 	mainLoop:start()
@@ -77,7 +77,6 @@ local function onMenuHideComplete()
 end
 
 local function showMainMenu()
-	print("show main menu---------------------------------------------------------------------")
 	mainMenu = MainMenu:new()
 	Runtime:addEventListener(Events.ON_MAIN_MENU_HIDE, onMenuHideComplete)
 	mainMenu:show()
@@ -130,8 +129,9 @@ function toggleSounds()
 end
 
 
---total reset
+--total reset (when user wants to restart game)
 local function restartGame()
+	print("before restart",system.getInfo("textureMemoryUsed"))
 	model:reset()
 	mainLoop:reset()
 	mainLoop:pause()
@@ -146,14 +146,13 @@ local function restartGame()
 		hud:reset()
 	end
 	hud:clickable(true)
-
 	mainLoop:start()
 
 	Runtime:removeEventListener(Events.ON_PLAY_AGAIN, onRestart)
 	print("after restart",system.getInfo("textureMemoryUsed"))
 end
 
---total clearing of all resources (except model)
+--total clearing of all resources except model
 local function clearAll()
 	print("before clean",system.getInfo("textureMemoryUsed"))
 	mainLoop:clearListeners()

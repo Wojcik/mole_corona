@@ -13,7 +13,6 @@ settings = {
 			UIStatusBarHidden = true,
 			UIAppFonts = 
 			{
-				"BADABB__.TTF",
 				"monoMMM_5.ttf"
 			}
 		}
@@ -23,8 +22,7 @@ settings = {
 	-- Android permissions
 
 	androidPermissions = {
-  		"android.permission.INTERNET",
-  		"android.permission.VIBRATE",
+  		"android.permission.INTERNET"
   	},
 
 	]]--

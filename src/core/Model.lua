@@ -6,16 +6,15 @@ Model = {}
 
 function Model:new()
 	local model  = {}
+	--try to load save
 	model.memento =  loadTable(Constants.SAVE_FILE_NAME)
 	if (model.memento == nil)  then
 		model.memento = {}
 		model.memento.highScore = 0
 		model.memento.soundOn = true
-        print("init alllllllllllllllllll modeeelll")
 	end
 	model.hp = Constants.NUM_LIVES
 	model.currentScore = 0
-
 
   	function model:addToCurrentScore(value)
 		value = math.max(value, 0)
@@ -27,6 +26,7 @@ function Model:new()
     function model:onKillBeaver(event)
 	    self:addToCurrentScore(Constants.HIT_POINT)
     end
+
     function model:onSurvivedBeaver(event)
 	    if (self.hp > 0) then
 		    self.hp = self.hp - 1

@@ -2,15 +2,15 @@ Constants = {}
 
 Constants.SAVE_FILE_NAME = "save.json"
 
-Constants.NUM_LIVES = 1
+Constants.NUM_LIVES = 3
 -- add to score when player hit beaver
 Constants.HIT_POINT = 500
 -- coefficient which increase difficulty (SHOW_INTERVAL and HIDE_INTERVAL) every DIFF_INCREASE_TIME
 Constants.DIFF_COEFF = 2
 -- every SHOW_INTERVAL ms beaver will appear
-Constants.SHOW_INTERVAL = 1000
+Constants.SHOW_INTERVAL = 2000
 -- beaver will be outside hole HIDE_INTERVAL ms
-Constants.HIDE_INTERVAL = 1000
+Constants.HIDE_INTERVAL = 2000
 -- every  DIFF_INCREASE_TIME ms difficulty (SHOW_INTERVAL and HIDE_INTERVAL) will be divided by DIFF_COEFF
 Constants.DIFF_INCREASE_TIME = 20*1000
 

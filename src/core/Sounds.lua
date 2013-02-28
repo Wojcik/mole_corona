@@ -4,10 +4,10 @@ Sounds = {}
 
 function Sounds:new()
 	local sounds = {}
-	sounds.appear = audio.loadSound("appear.wav")
-	sounds.hit = audio.loadSound("hit.wav")
-	sounds.miss = audio.loadSound("miss.wav")
-	sounds.backgroundMusic = audio.loadSound("bg.mp3")
+	sounds.appear = audio.loadSound("assets/sounds/appear.wav")
+	sounds.hit = audio.loadSound("assets/sounds/hit.wav")
+	sounds.miss = audio.loadSound("assets/sounds/miss.wav")
+	sounds.backgroundMusic = audio.loadSound("assets/sounds/bg.mp3")
 
 	function sounds:play()
 		self.backgroundMusicChannel = audio.play( self.backgroundMusic, {loops=-1}  )

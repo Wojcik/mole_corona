@@ -1,7 +1,9 @@
+--field with holes and beavers
+
 require "src.core.Constants"
 require "src.core.Utils"
 require "src.objects.SceneController"
-require("src.objects.Beaver")
+require "src.objects.Beaver"
 Level = {}
 
 function Level:new()
@@ -18,8 +20,8 @@ function Level:new()
 	level.back_top:setReferencePoint(display.TopLeftReferencePoint)
 	level.screen:insert(level.back_top)
 
-	local mask = graphics.newMask( "beaverMask.jpg")
-	-- apply or re-apply the mask.
+	--apply mask for beaver
+	local mask = graphics.newMask( "assets/img/beaverMask.jpg")
 	level.beaversGroup:setMask(nil)
 	level.beaversGroup:setMask(mask)
 
@@ -32,7 +34,6 @@ function Level:new()
 	end
 
 	local beaver = level.beavers[1]
-	print(beaver.sprite.width, beaver.sprite.height)
 
 	level.screen:insert(level.beaversGroup)
 
@@ -47,7 +48,7 @@ function Level:new()
 			return
 		end
 		if (self.textobj == nil) then
-			local font  = "BadaBoom BB" or native.systemFont
+			local font  = "monoMMM_5" or native.systemFont
 			self.textobj = display.newText("", 50, 50, font, 24)
 			self.textobj:setReferencePoint(display.CenterReferencePoint)
 			self.textobj:setTextColor(217, 103, 22)
@@ -87,7 +88,6 @@ function Level:new()
 	end
 
 	function level:destroy()
-
 		local beavers = self.beavers
 		for i,v in ipairs(beavers) do
 			v:destroy()
@@ -105,6 +105,7 @@ function Level:new()
 		self.screen = nil
 		self.controller:destroy()
 		self.controller = nil
+		print("level:destroy")
 	end
 
 	return level
